@@ -18,9 +18,6 @@ A full-stack recipe ordering web application built with **Next.js 14 (App Router
 
 ## 📸 Preview
 
-![recipebox-preview](public/preview.png)
-_(You can add a screenshot or demo GIF here)_
-
 ---
 
 ## 🛠️ Tech Stack
