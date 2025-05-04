@@ -104,8 +104,6 @@ NEXT_PUBLIC_API_URL=http://localhost:8000/api
 * Search/filter recipes
 * Admin dashboard (Django Admin)
 
----
-
 ## 📄 License
 
 MIT License © 2025 [Your Name]
