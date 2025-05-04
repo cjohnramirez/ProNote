@@ -2,8 +2,6 @@
 
 A full-stack recipe ordering web application built with **Next.js 14 (App Router)** for the frontend and **Django + Django REST Framework** for the backend.
 
----
-
 ## ✨ Features
 
 - User authentication (JWT)
@@ -14,11 +12,7 @@ A full-stack recipe ordering web application built with **Next.js 14 (App Router
 - Fully responsive and modern UI
 - Deployed with Vercel (frontend) and Render/Railway (backend)
 
----
-
 ## 📸 Preview
-
----
 
 ## 🛠️ Tech Stack
 
@@ -35,8 +29,6 @@ A full-stack recipe ordering web application built with **Next.js 14 (App Router
 - Simple JWT for authentication
 - SQLite / PostgreSQL (easily swappable)
 
----
-
 ## 🗃️ File Structure (Simplified)
 
 ```
@@ -51,8 +43,6 @@ root/
 │   ├── components/       # UI components
 │   └── lib/              # API/auth utils
 ```
-
----
 
 ## ⚙️ Getting Started
 
@@ -96,22 +86,16 @@ Create `.env.local`:
 NEXT_PUBLIC_API_URL=http://localhost:8000/api
 ```
 
----
-
 ## 🔐 Authentication
 
 * Register: `POST /api/register/`
 * Login: `POST /api/token/`
 * Access token is stored in `localStorage` and used for authenticated requests.
 
----
-
 ## 📦 Deployment
 
 * **Frontend**: [Vercel](https://vercel.com)
 * **Backend**: [Render](https://render.com) or [Railway](https://railway.app)
-
----
 
 ## 📌 TODO (Optional Features)
 
