@@ -1,15 +1,14 @@
-"use client"
+"use client";
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useUserStore } from "@/store/useUserStore";
 
 export default function Home() {
-  // Mock backend
   const router = useRouter();
-  
+  const loggedIn = useUserStore((state) => state.isLoggedIn);
+
   useEffect(() => {
-    const loggedIn = true;
-    
     if (loggedIn) {
       router.push("/main");
     } else {
@@ -17,5 +16,5 @@ export default function Home() {
     }
   }, [router]);
 
-  return <></>
+  return <></>;
 }
