@@ -7,6 +7,8 @@
   --color-muted-violet: oklch(0.1911 0.0321 282.93);
   --color-bright-muted-violet: oklch(0.706 0.1221 299.92);
   --color-bright-violet: oklch(0.584 0.197 287.84);
+  --color-muted-nocolor: oklch(0.4627 0.0145 280.76);
+  --color-dark-violet: oklch(0.1911 0.0321 282.93);
 }
 
 @theme inline {
@@ -112,7 +114,7 @@
   --sidebar-foreground: oklch(0.985 0 0);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent: oklch(0.1911 0.0321 282.93);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
