@@ -9,6 +9,7 @@
   --color-bright-violet: oklch(0.584 0.197 287.84);
   --color-muted-nocolor: oklch(0.4627 0.0145 280.76);
   --color-dark-violet: oklch(0.1911 0.0321 282.93);
+  --color-muted-white: oklch(0.8468 0.0249 283.32);
 }
 
 @theme inline {
