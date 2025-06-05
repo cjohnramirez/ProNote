@@ -166,8 +166,8 @@ export default function Main({ children }: { children: React.ReactNode }) {
           </button>
         </SidebarHeader>
       </Sidebar>
-      <SidebarInset>
-        <main className="m-8 h-full bg-dark-violet rounded-2xl border-1 border-muted-nocolor">
+      <SidebarInset className="m-8">
+        <main className="bg-dark-violet rounded-2xl border-1 border-muted-nocolor h-full">
           {open == true ? (
             <PanelLeftClose
               onClick={() => {

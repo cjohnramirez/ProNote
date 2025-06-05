@@ -1,15 +1,16 @@
 "use client";
 
-import NoteCard from "@/components/custom/notes/noteCard";
+import TaskCard from "@/components/custom/notes/taskCard";
 import {
   DropdownMenuTrigger,
   DropdownMenu,
   DropdownMenuContent,
 } from "@/components/ui/dropdown-menu";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { useNotesStore } from "@/store/main/useNotesStore";
+import { useTasksStore } from "@/store/main/useTasksStore";
 import {
   ArrowDownAZ,
+  Calendar,
   ChevronDown,
   Component,
   Filter,
@@ -20,10 +21,10 @@ import {
 } from "lucide-react";
 import React from "react";
 
-function Notes() {
-  const noteGroups = useNotesStore((state) => state.noteGroups);
-  const notes = useNotesStore((state) => state.notes);
-  const noteCreators = useNotesStore((state) => state.noteCreators);
+function Tasks() {
+  const taskGroups = useTasksStore((state) => state.taskGroups);
+  const tasks = useTasksStore((state) => state.tasks);
+  const taskCreators = useTasksStore((state) => state.taskCreators)
 
   return (
     <div className="p-6 flex flex-col gap-6">
@@ -31,7 +32,7 @@ function Notes() {
         <DropdownMenu>
           <DropdownMenuTrigger>
             <article className="flex gap-4 items-center">
-              <p className="text-3xl font-semibold">{noteGroups[0].name}</p>
+              <p className="text-3xl font-semibold">{taskGroups[0].name}</p>
               <ChevronDown></ChevronDown>
             </article>
           </DropdownMenuTrigger>
@@ -39,14 +40,14 @@ function Notes() {
         </DropdownMenu>
         <section className="flex space-x-2">
           <div className="flex -space-x-2 h-10 items-center">
-            {noteCreators.map((noteCreator) => (
+            {taskCreators.map((taskCreator) => (
               <div
                 className={`rounded-full bg-bright-muted-violet w-8 aspect-square flex items-center justify-center border-muted-violet border-2`}
-                key={noteCreator.name}
-                style={{ backgroundColor: `#${noteCreator.color}` }}
+                key={taskCreator.name}
+                style={{ backgroundColor: `#${taskCreator.color}` }}
               >
                 <p className="text-xs font-semibold">
-                  {noteCreator.name
+                  {taskCreator.name
                     .toUpperCase()
                     .match(/\b(\w)/g)
                     ?.slice(0, 2)}
@@ -56,7 +57,7 @@ function Notes() {
           </div>
           <article className="flex items-center gap-2 bg-linear-to-t from-bright-violet to-bright-muted-violet p-2 px-6 rounded-xl font-semibold">
             <Plus size={27} strokeWidth={1.25} />
-            <p>Add Notes</p>
+            <p>Add Tasks</p>
           </article>
         </section>
       </header>
@@ -78,6 +79,17 @@ function Notes() {
               <article className="flex gap-4 items-center border-1 border-muted-white py-2 px-4 rounded-xl">
                 <Search size={27} strokeWidth={1.25} />
                 <p className="text-muted-white font-semibold">Search</p>
+              </article>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {/* future content here */}
+            </DropdownMenuContent>
+          </DropdownMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger>
+              <article className="flex gap-4 items-center border-1 border-muted-white py-2 px-4 rounded-xl">
+                <Calendar size={27} strokeWidth={1.25} />
+                <p className="text-muted-white font-semibold">Calendar</p>
               </article>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -123,8 +135,8 @@ function Notes() {
       </nav>
       <ScrollArea>
         <main className="grid grid-cols-3 gap-6">
-          {notes.map((note) => (
-            <NoteCard note={note} key={note.id} />
+          {tasks.map((task) => (
+            <TaskCard task={task} key={task.id}/>
           ))}
         </main>
       </ScrollArea>
@@ -132,4 +144,4 @@ function Notes() {
   );
 }
 
-export default Notes;
+export default Tasks;

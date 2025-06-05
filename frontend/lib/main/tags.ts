@@ -1,4 +1,4 @@
-export interface user {
+export interface tag {
   name: string;
   color: string;
 }
