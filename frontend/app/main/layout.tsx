@@ -173,14 +173,14 @@ export default function Main({ children }: { children: React.ReactNode }) {
               onClick={() => {
                 setOpen(!open);
               }}
-              className="m-6"
+              className="m-6 mb-0"
             />
           ) : (
             <PanelLeftOpen
               onClick={() => {
                 setOpen(!open);
               }}
-              className="m-6"
+              className="m-6 mb-0"
             />
           )}
           {children}

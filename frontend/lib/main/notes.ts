@@ -7,7 +7,7 @@ export interface note {
   id: number;
   title: string;
   text: string;
-  tag: string;
+  tag: tag[];
   attachedFiles: attachedFile[];
   createdBy: string;
   createdOn: string;
@@ -16,4 +16,9 @@ export interface note {
 
 export interface attachedFile {
   name: string;
+}
+
+export interface tag {
+  name: string;
+  color: string;
 }
