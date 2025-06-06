@@ -29,9 +29,6 @@ function TaskCard({ task }: { task: task }) {
     ) + 1,
   };
 
-  console.log("Completed: " + (progressObject.numOfCompleted / task.subtasks.length) * 100)
-  console.log("Subtasks: " + task.subtasks.length)
-
   return (
     <article className="flex flex-col border-1 border-muted-nocolor rounded-2xl p-4 font-sans space-y-4 justify-between">
       <section className="space-y-3">
