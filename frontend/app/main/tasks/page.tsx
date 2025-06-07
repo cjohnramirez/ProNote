@@ -1,6 +1,6 @@
 "use client";
 
-import TaskCard from "@/components/custom/notes/taskCard";
+import TaskCard from "@/components/custom/tasks/taskCard";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { useTasksStore } from "@/store/main/useTasksStore";
 import React from "react";

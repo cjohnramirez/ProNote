@@ -1,6 +1,5 @@
 "use client";
 
-import TaskCard from "@/components/custom/notes/taskCard";
 import {
   DropdownMenuTrigger,
   DropdownMenu,
@@ -29,7 +28,7 @@ export default function Tasks({
   const taskCreators = useTasksStore((state) => state.taskCreators);
   return (
     <main className="p-6 flex flex-col gap-6">
-      <header className="flex justify-between h-1/5">
+      <header className="flex justify-between">
         <DropdownMenu>
           <DropdownMenuTrigger>
             <article className="flex gap-4 items-center">
