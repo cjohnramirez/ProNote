@@ -6,7 +6,7 @@ function HabitCard({ habit, checked }: { habit: habit; checked: boolean }) {
 
   return (
     <div
-      className="flex w-full flex-col items-start gap-2 rounded-xl border-1 border-l-6 p-4 font-sans text-sm"
+      className="flex w-full flex-col items-start gap-2 rounded-xl border-1 border-l-6 p-4 font-sans text-sm font-semibold"
       style={{ borderColor: `#${habit.tag.color}` }}
     >
       <p>{habit.tag.name}</p>

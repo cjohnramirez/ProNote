@@ -93,12 +93,12 @@ function Habits() {
           </div>
         </section>
       </section>
-      <aside className="border-muted-white flex w-1/3 flex-col items-center justify-start gap-4 rounded-xl border-1 p-6 leading-7">
-        <section className="flex w-full flex-col justify-start font-semibold">
+      <aside className="border-muted-white flex w-1/3 flex-col items-center justify-start gap-4 rounded-xl border-1 ">
+        <section className="flex w-full flex-col justify-start p-6 pb-0 font-semibold ">
           <p className="text-3xl">{todayDay}</p>
           <p>{todayDate}</p>
         </section>
-        <section className="flex w-full justify-start pb-4">
+        <section className="flex w-full justify-start p-6 pt-3">
           <div className="space-x-2">
             <button className="rounded-full border-1 p-2">
               <ChevronLeft />
@@ -107,9 +107,11 @@ function Habits() {
               <ChevronRight />
             </button>
           </div>
-          <div></div>
+          <div>
+            
+          </div>
         </section>
-        <section className="-mx-6 border-t-1 w-full pt-4">
+        <section className="-mx-6 w-full border-t-1 p-6">
           <div className="space-y-4">
             {habits
               .filter((habit) => habit.daysOfWeek[Number(today)] != 2)
