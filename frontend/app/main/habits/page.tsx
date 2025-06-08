@@ -1,5 +1,6 @@
 "use client";
 
+import HabitCard from "@/components/custom/habits/habitCard";
 import HabitSelectors from "@/components/custom/habits/habitSelectors";
 import { useHabitsStore } from "@/store/main/useHabitsStore";
 import { ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
@@ -9,6 +10,9 @@ import React from "react";
 function Habits() {
   const habits = useHabitsStore((state) => state.habits);
   const habitGroups = useHabitsStore((state) => state.habitGroups);
+
+  const today = DateTime.now().weekday;
+  console.log(today);
 
   const todayDay = DateTime.now().toFormat("cccc");
   const todayDate = DateTime.now().toFormat("LLLL dd yyyy");
@@ -41,7 +45,6 @@ function Habits() {
 
   const completed =
     (completedCounter / (habits.length * 7 - notIncludedCounter)) * 100;
-  console.log(completed);
 
   const daysOfWeek = ["M", "T", "W", "Th", "F", "Sa", "Su"];
 
@@ -78,7 +81,7 @@ function Habits() {
           <p>{completed.toFixed(0)}% complete</p>
         </section>
         <section className="-mx-6 border-t-1">
-          <div className="mr-6 flex justify-end gap-10 p-6 pb-0 text-sm font-semibold">
+          <div className="mr-6 flex justify-end gap-[41px] p-6 pb-0 text-sm font-semibold">
             {daysOfWeek.map((dayOfWeek) => (
               <p key={dayOfWeek}>{dayOfWeek}</p>
             ))}
@@ -90,10 +93,38 @@ function Habits() {
           </div>
         </section>
       </section>
-      <aside className="border-muted-white flex w-1/3 flex-col items-center justify-start gap-4 rounded-xl border-1 px-4 py-2 leading-8">
-        <section className="flex flex-col">
-          <p className="text-3xl font-semibold">{todayDay}</p>
+      <aside className="border-muted-white flex w-1/3 flex-col items-center justify-start gap-4 rounded-xl border-1 p-6 leading-7">
+        <section className="flex w-full flex-col justify-start font-semibold">
+          <p className="text-3xl">{todayDay}</p>
           <p>{todayDate}</p>
+        </section>
+        <section className="flex w-full justify-start pb-4">
+          <div className="space-x-2">
+            <button className="rounded-full border-1 p-2">
+              <ChevronLeft />
+            </button>
+            <button className="rounded-full border-1 p-2">
+              <ChevronRight />
+            </button>
+          </div>
+          <div></div>
+        </section>
+        <section className="-mx-6 border-t-1 w-full pt-4">
+          <div className="space-y-4">
+            {habits
+              .filter((habit) => habit.daysOfWeek[Number(today)] != 2)
+              .map((habit) => (
+                <HabitCard
+                  habit={habit}
+                  checked={habit.daysOfWeek[Number(today)] == 1}
+                  key={
+                    DateTime.fromObject({ day: today }).toFormat("ccc") +
+                    "-" +
+                    habit.tag.name
+                  }
+                />
+              ))}
+          </div>
         </section>
       </aside>
     </>

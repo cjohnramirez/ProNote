@@ -12,10 +12,10 @@ function NoteCard({ note }: { note: note }) {
   const dt = DateTime.fromISO(note.createdOn);
 
   return (
-    <article className="border-muted-nocolor rounded-2xl border-1 p-4 font-sans">
+    <article className="border-1 border-muted-nocolor rounded-2xl p-4 font-sans">
       <section className="flex justify-between">
         <div
-          className="border-muted-nocolor flex items-center rounded-2xl border-1 px-2 text-center text-xs"
+          className="border-1 border-muted-nocolor text-xs rounded-2xl text-center flex items-center px-2"
           style={{ backgroundColor: `#${note.tag.color} ` }}
         >
           <p>{note.tag.name}</p>
@@ -24,17 +24,19 @@ function NoteCard({ note }: { note: note }) {
           <DropdownMenuTrigger>
             <Ellipsis size={27} strokeWidth={1.25} />
           </DropdownMenuTrigger>
-          <DropdownMenuContent>{/* future content here */}</DropdownMenuContent>
+          <DropdownMenuContent>
+            {/* future content here */}
+          </DropdownMenuContent>
         </DropdownMenu>
       </section>
-      <section className="line-clamp-4 pt-6 font-medium">
-        <p className="pr-8 pb-2 text-lg leading-6">{note.title}</p>
+      <section className="pt-6 font-medium line-clamp-4">
+        <p className="text-lg pr-8 leading-6 pb-2">{note.title}</p>
         <p className="text-xs leading-5">{note.text}</p>
       </section>
       <hr className="my-4" />
       <section className="flex gap-4">
         <article
-          className="bg-bright-muted-violet flex aspect-square w-10 items-center justify-center rounded-full"
+          className="rounded-full bg-bright-muted-violet w-10 aspect-square flex items-center justify-center"
           style={{ backgroundColor: `#${note.createdBy.color}` }}
         >
           <p className="text-xs">
@@ -48,7 +50,7 @@ function NoteCard({ note }: { note: note }) {
           <Paperclip size={27} strokeWidth={1.25} />
           <p className="text-xs">{note.attachedFiles.length}</p>
         </article>
-        <article className="flex w-full items-center justify-end gap-1">
+        <article className="flex items-center gap-1 w-full justify-end">
           <Calendar size={27} strokeWidth={1.25} />
           <p className="text-xs">{dt.toLocaleString(DateTime.DATE_FULL)}</p>
         </article>

@@ -64,7 +64,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
       onOpenChange={setOpen}
       className="text-muted-white"
     >
-      <Sidebar className="border-none p-6 pr-0 font-sans">
+      <Sidebar className="border-none p-6 pr-0">
         <SidebarHeader className="gap-6">
           <Link
             href={"/main"}

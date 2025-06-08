@@ -3,14 +3,15 @@ import React, { useState } from "react";
 interface HabitCheckboxInterface {
   disabled: boolean;
   color: string;
+  checked: boolean;
 }
 
-function HabitCheckbox({ disabled, color }: HabitCheckboxInterface) {
-  const [clicked, setClicked] = useState<boolean>(false);
+function HabitCheckbox({ disabled, color, checked }: HabitCheckboxInterface) {
+  const [clicked, setClicked] = useState<boolean>(checked);
 
   return (
     <button
-      className="flex items-center justify-center rounded-md p-[2px]"
+      className="flex items-center justify-center rounded-md p-[2px] focus:border-muted-white font-sans"
       style={{
         border: `1px solid #${!disabled ? color : ""}`,
         padding: `${!disabled ? "" : "3px"}`,

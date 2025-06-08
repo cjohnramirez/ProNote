@@ -1,6 +1,5 @@
 "use client";
 
-import NoteCard from "@/components/custom/notes/noteCard";
 import {
   DropdownMenuTrigger,
   DropdownMenu,
@@ -13,7 +12,6 @@ import {
   ChevronDown,
   Component,
   Filter,
-  LayoutDashboard,
   LayoutGridIcon,
   Plus,
   Search,

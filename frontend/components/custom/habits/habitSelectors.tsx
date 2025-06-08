@@ -7,7 +7,7 @@ import HabitCheckbox from "./habitCheckbox";
 function HabitSelectors({ habit }: { habit: habit }) {
   return (
     <div
-      className="flex items-center justify-between gap-6 rounded-xl border-1 border-l-6 p-4"
+      className="flex items-center justify-between gap-6 rounded-xl border-1 border-l-6 p-4 font-sans"
       style={{ borderColor: `#${habit.tag.color}` }}
     >
       <p className="font-semibold">{habit.tag.name}</p>
@@ -15,6 +15,7 @@ function HabitSelectors({ habit }: { habit: habit }) {
         {habit.daysOfWeek.map((dayOfWeek, index) => (
           <HabitCheckbox
             disabled={dayOfWeek == 2}
+            checked={dayOfWeek == 1}
             color={habit.tag.color}
             key={
               DateTime.fromObject({ day: index }).toFormat("ccc") +

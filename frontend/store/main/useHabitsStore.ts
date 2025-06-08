@@ -13,7 +13,7 @@ export const useHabitsStore = create<habitsStore>()((set) => ({
     {
       id: 1,
       tag: { name: "Psychology", color: "3746ef" },
-      daysOfWeek: [2, 1, 1, 2, 1, 0, 0],
+      daysOfWeek: [2, 1, 1, 2, 1, 0, 0], //this is fetched everytime the weekNumber changes
       habitGroup: { id: 1, name: "Mind" },
     },
     {
