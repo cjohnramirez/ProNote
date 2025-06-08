@@ -59,8 +59,12 @@ export default function Main({ children }: { children: React.ReactNode }) {
   const userDurationPlan = useUserStore((state) => state.userDurationPlan);
 
   return (
-    <SidebarProvider open={open} onOpenChange={setOpen}>
-      <Sidebar className="p-6 pr-0 font-sans border-none">
+    <SidebarProvider
+      open={open}
+      onOpenChange={setOpen}
+      className="text-muted-white"
+    >
+      <Sidebar className="border-none p-6 pr-0 font-sans">
         <SidebarHeader className="gap-6">
           <Link
             href={"/main"}
@@ -76,9 +80,9 @@ export default function Main({ children }: { children: React.ReactNode }) {
             <p className="text-xl">ProNote</p>
           </Link>
           <DropdownMenu>
-            <DropdownMenuTrigger className="flex p-4 bg-muted-violet border-bright-violet border-1 w-full rounded-2xl items-center gap-4">
+            <DropdownMenuTrigger className="bg-muted-violet border-bright-violet flex w-full items-center gap-4 rounded-2xl border-1 p-4">
               <section>
-                <div className="rounded-full bg-bright-muted-violet w-10 aspect-square flex items-center justify-center">
+                <div className="bg-bright-muted-violet flex aspect-square w-10 items-center justify-center rounded-full">
                   <p>
                     {userName
                       .toUpperCase()
@@ -87,7 +91,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
                   </p>
                 </div>
               </section>
-              <section className="flex w-full justify-between items-center">
+              <section className="flex w-full items-center justify-between">
                 <div className="flex flex-col items-start">
                   <p className="text-md font-semibold">{userName}</p>
                   <p className="text-sm leading-none font-semibold text-gray-600">
@@ -103,7 +107,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
         <SidebarContent>
           <SidebarGroup className="h-full">
             <SidebarContent>
-              <SidebarMenu className="gap-2 pt-2 flex flex-col justify-between h-full">
+              <SidebarMenu className="flex h-full flex-col justify-between gap-2 pt-2">
                 <section>
                   {mainItems.map((item) => (
                     <SidebarMenuItem key={item.title}>
@@ -111,15 +115,15 @@ export default function Main({ children }: { children: React.ReactNode }) {
                         <Link
                           href={item.url}
                           key={item.title}
-                          className="w-full h-full"
+                          className="h-full w-full"
                         >
-                          <article className="flex items-center gap-6 group/options h-full">
+                          <article className="group/options flex h-full items-center gap-6">
                             <item.icon
                               strokeWidth={1}
                               size={27}
-                              className="stroke-muted-nocolor w-10 group-hover/options:stroke-muted-white"
+                              className="stroke-muted-nocolor group-hover/options:stroke-muted-white w-10"
                             />
-                            <p className="text-md text-muted-nocolor font-semibold w-full group-hover/options:text-muted-white">
+                            <p className="text-md text-muted-nocolor group-hover/options:text-muted-white w-full font-semibold">
                               {item.title}
                             </p>
                           </article>
@@ -132,13 +136,13 @@ export default function Main({ children }: { children: React.ReactNode }) {
                   <SidebarMenuItem>
                     <SidebarMenuButton className="h-12">
                       <Link href="/main/settings" className="w-full">
-                        <article className="flex items-center gap-6 group/settings">
+                        <article className="group/settings flex items-center gap-6">
                           <Bolt
                             strokeWidth={1}
                             size={27}
-                            className="stroke-muted-nocolor w-10 group-hover/settings:stroke-muted-white"
+                            className="stroke-muted-nocolor group-hover/settings:stroke-muted-white w-10"
                           />
-                          <p className="text-md text-muted-nocolor font-semibold w-full group-hover/settings:text-muted-white">
+                          <p className="text-md text-muted-nocolor group-hover/settings:text-muted-white w-full font-semibold">
                             Settings
                           </p>
                         </article>
@@ -151,14 +155,14 @@ export default function Main({ children }: { children: React.ReactNode }) {
           </SidebarGroup>
         </SidebarContent>
         <SidebarHeader>
-          <button className="flex p-8 bg-muted-violet border-bright-violet border-1 w-full rounded-2xl items-center gap-4">
-            <section className="flex flex-col justify-center w-full">
+          <button className="bg-muted-violet border-bright-violet flex w-full items-center gap-4 rounded-2xl border-1 p-8">
+            <section className="flex w-full flex-col justify-center">
               <p className="font-semibold">
                 Trial Period in {userDurationPlan} days
               </p>
               <Link
                 href="/landing/pricing/"
-                className="text-sm leading-none text-bright-muted-violet underline font-semibold"
+                className="text-bright-muted-violet text-sm leading-none font-semibold underline"
               >
                 See Available Plans
               </Link>
@@ -167,7 +171,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
         </SidebarHeader>
       </Sidebar>
       <SidebarInset className="m-8">
-        <main className="bg-dark-violet rounded-2xl border-1 border-muted-nocolor h-full">
+        <main className="bg-dark-violet border-muted-nocolor h-full rounded-2xl border-1">
           {open == true ? (
             <PanelLeftClose
               onClick={() => {

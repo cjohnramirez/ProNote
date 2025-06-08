@@ -29,11 +29,11 @@ export default function Notes({
   const noteCreators = useNotesStore((state) => state.noteCreators);
 
   return (
-    <main className="p-6 flex flex-col gap-6 h-dvh">
+    <main className="flex h-dvh flex-col gap-6 p-6">
       <header className="flex justify-between">
         <DropdownMenu>
           <DropdownMenuTrigger>
-            <article className="flex gap-4 items-center">
+            <article className="flex items-center gap-4">
               <p className="text-3xl font-semibold">{noteGroups[0].name}</p>
               <ChevronDown></ChevronDown>
             </article>
@@ -41,10 +41,10 @@ export default function Notes({
           <DropdownMenuContent>{/* future content here */}</DropdownMenuContent>
         </DropdownMenu>
         <section className="flex space-x-2">
-          <div className="flex -space-x-2 h-10 items-center">
+          <div className="flex h-10 items-center -space-x-2">
             {noteCreators.map((noteCreator) => (
               <div
-                className={`rounded-full bg-bright-muted-violet w-8 aspect-square flex items-center justify-center border-muted-violet border-2`}
+                className={`bg-bright-muted-violet border-muted-violet flex aspect-square w-8 items-center justify-center rounded-full border-2`}
                 key={noteCreator.name}
                 style={{ backgroundColor: `#${noteCreator.color}` }}
               >
@@ -57,7 +57,7 @@ export default function Notes({
               </div>
             ))}
           </div>
-          <article className="flex items-center gap-2 bg-linear-to-t from-bright-violet to-bright-muted-violet p-2 px-6 rounded-xl font-semibold">
+          <article className="from-bright-violet to-bright-muted-violet flex items-center gap-2 rounded-xl bg-linear-to-t p-2 px-6 font-semibold">
             <Plus size={27} strokeWidth={1.25} />
             <p>Add Notes</p>
           </article>
@@ -67,9 +67,9 @@ export default function Notes({
         <section className="flex gap-3">
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <article className="flex gap-4 items-center border-1 border-muted-white py-2 px-4 rounded-xl">
+              <article className="border-muted-white flex items-center gap-4 rounded-xl border-1 px-4 py-2">
                 <LayoutGridIcon size={27} strokeWidth={1.25} />
-                <p className="text-muted-white font-semibold">Grid</p>
+                <p className="font-semibold">Grid</p>
               </article>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -78,9 +78,9 @@ export default function Notes({
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <article className="flex gap-4 items-center border-1 border-muted-white py-2 px-4 rounded-xl">
+              <article className="border-muted-white flex items-center gap-4 rounded-xl border-1 px-4 py-2">
                 <Search size={27} strokeWidth={1.25} />
-                <p className="text-muted-white font-semibold">Search</p>
+                <p className="font-semibold">Search</p>
               </article>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -91,9 +91,9 @@ export default function Notes({
         <section className="flex gap-3">
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <article className="flex gap-4 items-center border-1 border-muted-white py-2 px-4 rounded-xl">
+              <article className="border-muted-white flex items-center gap-4 rounded-xl border-1 px-4 py-2">
                 <Component size={27} strokeWidth={1.25} />
-                <p className="text-muted-white font-semibold">Board</p>
+                <p className="font-semibold">Board</p>
               </article>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -102,9 +102,9 @@ export default function Notes({
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <article className="flex gap-4 items-center border-1 border-muted-white py-2 px-4 rounded-xl">
+              <article className="border-muted-white flex items-center gap-4 rounded-xl border-1 px-4 py-2">
                 <ArrowDownAZ size={27} strokeWidth={1.25} />
-                <p className="text-muted-white font-semibold">Sort</p>
+                <p className="font-semibold">Sort</p>
               </article>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
@@ -113,9 +113,9 @@ export default function Notes({
           </DropdownMenu>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <article className="flex gap-4 items-center border-1 border-muted-white py-2 px-4 rounded-xl">
+              <article className="border-muted-white flex items-center gap-4 rounded-xl border-1 px-4 py-2">
                 <Filter size={27} strokeWidth={1.25} />
-                <p className="text-muted-white font-semibold">Filter</p>
+                <p className="font-semibold">Filter</p>
               </article>
             </DropdownMenuTrigger>
             <DropdownMenuContent>

@@ -16,7 +16,7 @@ export const useTasksStore = create<tasksStore>()((set) => ({
       id: 0,
       title: "Paper Final Revision",
       comment: [],
-      tag: { name: "Writing", color: "005f5a" },
+      tag: { name: "Writing", color: "b2824c" },
       createdOn: "2025-03-17",
       createdBy: { name: "David Robinson", color: "fb64b6" },
       subtasks: [],
@@ -26,7 +26,7 @@ export const useTasksStore = create<tasksStore>()((set) => ({
       id: 1,
       title: "Draft Introduction Section",
       comment: [],
-      tag: { name: "Mathematics", color: "8a0194" },
+      tag: { name: "Mathematics", color: "cd2d31" },
       createdOn: "2025-04-06",
       createdBy: { name: "Katherine Graham", color: "50a2ff" },
       subtasks: [
@@ -40,7 +40,7 @@ export const useTasksStore = create<tasksStore>()((set) => ({
       id: 2,
       title: "Review Thermo. Notes",
       comment: [],
-      tag: { name: "Astronomy", color: "005f5a" },
+      tag: { name: "Astronomy", color: "b2824c" },
       createdOn: "2025-04-12",
       createdBy: { name: "Natalie Moore", color: "ff637e" },
       subtasks: [
@@ -53,7 +53,7 @@ export const useTasksStore = create<tasksStore>()((set) => ({
       id: 3,
       title: "Fix API Bug in Booking Page",
       comment: ["Check error logs for more details."],
-      tag: { name: "Coding", color: "a3004c" },
+      tag: { name: "Coding", color: "c97d3b" },
       createdOn: "2025-05-02",
       createdBy: { name: "Sarah Green", color: "ff637e" },
       subtasks: [
@@ -66,7 +66,7 @@ export const useTasksStore = create<tasksStore>()((set) => ({
       id: 4,
       title: "Redesign Mobile UI for Booking",
       comment: ["Coordinate with UX designer."],
-      tag: { name: "Coding", color: "a3004c" },
+      tag: { name: "Coding", color: "c97d3b" },
       createdOn: "2025-05-15",
       createdBy: { name: "Sarah Green", color: "ff637e" },
       subtasks: [
@@ -80,7 +80,7 @@ export const useTasksStore = create<tasksStore>()((set) => ({
       id: 5,
       title: "Urgent Assignments (Cram)",
       comment: [],
-      tag: { name: "Mathematics", color: "8a0194" },
+      tag: { name: "Mathematics", color: "cd2d31" },
       createdOn: "2025-05-27",
       createdBy: { name: "Alice Lee", color: "f4a8ff" },
       subtasks: [
