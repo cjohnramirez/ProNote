@@ -1,7 +1,7 @@
 "use client";
 
-import HabitCard from "@/components/custom/habits/habitCard";
-import HabitSelectors from "@/components/custom/habits/habitSelectors";
+import HabitCard from "@/components/main/habits/habitCard";
+import HabitSelectors from "@/components/main/habits/habitSelectors";
 import { useHabitsStore } from "@/store/main/useHabitsStore";
 import { ArrowUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { DateTime } from "luxon";
@@ -9,8 +9,7 @@ import React from "react";
 
 function Habits() {
   const habits = useHabitsStore((state) => state.habits);
-  const habitGroups = useHabitsStore((state) => state.habitGroups);
-
+  
   const today = DateTime.now().weekday;
   console.log(today);
 
@@ -108,7 +107,7 @@ function Habits() {
             </button>
           </div>
           <div>
-            
+            {/* the progress circle thing */}
           </div>
         </section>
         <section className="-mx-6 w-full border-t-1 p-6">

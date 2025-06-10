@@ -62,7 +62,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
     <SidebarProvider
       open={open}
       onOpenChange={setOpen}
-      className="text-muted-white"
+      className="text-muted-white font-sans"
     >
       <Sidebar className="border-none p-6 pr-0">
         <SidebarHeader className="gap-6">
