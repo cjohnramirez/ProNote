@@ -14,13 +14,13 @@ function HabitCard({ habit, checked }: { habit: habit; checked: boolean }) {
         onClick={() => {
           setClicked(!clicked);
         }}
-        className="border-muted-white max-w-48 rounded-xl border-1 p-1 px-4"
+        className="text-muted-white max-w-48 rounded-xl border-1 p-1 px-4 text-sm"
         style={{
           backgroundColor: clicked ? "#05df72" : undefined,
-          color: clicked ? "#080813" : "white",
+          color: clicked ? "#080813" : "#cacbdd",
         }}
       >
-        Mark as Done
+        <p>Mark as Done</p>
       </button>
     </div>
   );

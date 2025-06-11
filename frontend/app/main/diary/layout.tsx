@@ -14,7 +14,7 @@ export default function DiaryLayout({
         </article>
         <article className="from-bright-violet to-bright-muted-violet flex items-center gap-2 rounded-xl bg-linear-to-t p-2 px-6 font-semibold">
           <Plus size={27} strokeWidth={1.25} />
-          <p>Add Tasks</p>
+          <p>Add Entry</p>
         </article>
       </header>
       <main>{children}</main>

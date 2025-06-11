@@ -7,37 +7,40 @@ import {
   CAN_UNDO_COMMAND,
   FORMAT_ELEMENT_COMMAND,
   FORMAT_TEXT_COMMAND,
+  REDO_COMMAND,
+  UNDO_COMMAND,
 } from "lexical";
 
 function DiaryToolbarPlugin() {
   const [editor] = useLexicalComposerContext();
-  const [disableMap, setDisableMap] = useState<{[id: string]: boolean}>({
+  const [disableMap, setDisableMap] = useState<{ [id: string]: boolean }>({
     [RichTextAction.Undo]: true,
     [RichTextAction.Redo]: true,
-  })
+  });
 
   useEffect(() => {
     return mergeRegister(
-      editor.registerCommand(
+      editor.registerCommand<boolean>(
         CAN_UNDO_COMMAND,
-        (payload) => {
-          setDisableMap((prevDisableMap) => ({
-            ...prevDisableMap,
-            undo: !payload
-          }))
+        (canUndo) => {
+          setDisableMap((prev) => ({
+            ...prev,
+            [RichTextAction.Undo]: !canUndo,
+          }));
           return false;
         },
-        1
-      ), editor.registerCommand(
+        1,
+      ),
+      editor.registerCommand<boolean>(
         CAN_REDO_COMMAND,
-        (payload) => {
-          setDisableMap((prevDisableMap) => ({
-            ...prevDisableMap,
-            redo: !payload
-          }))
+        (canRedo) => {
+          setDisableMap((prev) => ({
+            ...prev,
+            [RichTextAction.Redo]: !canRedo,
+          }));
           return false;
         },
-        1
+        1,
       ),
     );
   }, [editor]);
@@ -93,19 +96,14 @@ function DiaryToolbarPlugin() {
         break;
       }
       case RichTextAction.Undo: {
-        // Handle undo action
+        editor.dispatchCommand(UNDO_COMMAND, undefined);
         break;
       }
       case RichTextAction.Redo: {
-        // Handle redo action
-        break;
-      }
-      case RichTextAction.Divider: {
-        // Divider is not an actionable item
+        editor.dispatchCommand(REDO_COMMAND, undefined);
         break;
       }
       default: {
-        // Unknown action
         break;
       }
     }
@@ -125,6 +123,7 @@ function DiaryToolbarPlugin() {
             aria-label={tool.label}
             onClick={() => onAction(tool.id)}
             disabled={disableMap[tool.id]}
+            className="disabled:opacity-20"
           >
             {tool.icon}
           </button>
