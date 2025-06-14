@@ -87,4 +87,4 @@ Not accepting external contributions yet. This is a solo learning/dev project in
 
 MIT License © 2025 max Herman
 
-Let me know if you'd like a lighter version, or if you'd like to convert this to also generate a landing page from it using markdown-to-HTML or MDX.
+Made with love 💔
