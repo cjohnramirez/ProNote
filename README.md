@@ -43,12 +43,14 @@
 
 ## 📌 Project Structure
 
+```
 pro-note/
 ├── frontend/         # Next.js application
 ├── backend/          # Django backend (planned)
 ├── docker/           # Docker setup (planned)
 ├── README.md         # Project documentation
 └── .gitignore        # Git ignore rules
+```
 
 ## 📈 Development Status
 
