@@ -2,7 +2,6 @@
 
 import { DiaryTextEditorMemo } from "@/components/main/diary/DiaryTextEditor";
 import { useDiaryStore } from "@/store/main/useDiaryStore";
-import { Plus } from "lucide-react";
 import { DateTime } from "luxon";
 import React, { useEffect, useState } from "react";
 

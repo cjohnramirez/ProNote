@@ -1,4 +1,3 @@
-import { Checkbox } from "@/components/ui/checkbox";
 import { habit } from "@/lib/main/habits";
 import { DateTime } from "luxon";
 import React from "react";

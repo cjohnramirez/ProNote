@@ -67,7 +67,7 @@ export default function Main({ children }: { children: React.ReactNode }) {
       <Sidebar className="border-none p-6 pr-0">
         <SidebarHeader className="gap-6">
           <Link
-            href={"/main"}
+            href={"/main/notes"}
             className="flex items-center gap-6 font-semibold"
           >
             <Image

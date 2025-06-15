@@ -1,7 +1,6 @@
 "use client";
 
 import NoteCard from "@/components/main/notes/noteCard";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import { useNotesStore } from "@/store/main/useNotesStore";
 import React from "react";
 

@@ -1,4 +1,3 @@
-import { diaryEntry } from "@/lib/main/diary";
 import {
   InitialConfigType,
   LexicalComposer,
