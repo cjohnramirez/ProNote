@@ -2,7 +2,7 @@
 
 **ProNote** is a collaborative notes application built for productivity, organization, and focus. Designed as a full-stack project using **Next.js** (frontend) and **Django** (future backend), ProNote allows users to take control of their notes, habits, tasks, and diaries — with a unique focus on **collaboration through tags**.
 
-> ⚠️ This project is in early development (Day 14) — features and structure are rapidly evolving.
+> ⚠️ This project is in early development (Day 18) — features and structure are rapidly evolving.
 
 ---
 
