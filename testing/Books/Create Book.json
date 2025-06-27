@@ -3,9 +3,9 @@
     "method": "POST",
     "body": {
         "mimeType": "application/json",
-        "text": "    {\n        \"id\": 5,\n        \"title\": \"Python Crash Course\",\n        \"author\": \"Eric Matthes\",\n        \"publisher\": \"No Starch Press\",\n        \"published_date\": \"2019-05-03\",\n        \"page_count\": 544,\n        \"language\": \"English\"\n    }"
+        "text": "{\n    \"title\": \"Python Crash Course\",\n    \"author\": \"Eric Matthes\",\n    \"publisher\": \"No Starch Press\",\n    \"published_date\": \"2019-05-03\",\n    \"page_count\": 544,\n    \"language\": \"English\"\n}"
     },
-    "url": "http://127.0.0.1:8000/books",
+    "url": "http://127.0.0.1:8000/api/v1/books/",
     "sortOrder": 3,
     "parameters": [],
     "pathParameters": [],
