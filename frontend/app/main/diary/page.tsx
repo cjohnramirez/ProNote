@@ -7,7 +7,7 @@ import React, { useEffect, useState } from "react";
 
 function Diary() {
   const diaryEntry = useDiaryStore((state) => state.diaryEntry);
-  const [value, setValue] = useState("");
+  const [_value, setValue] = useState("");
 
   useEffect(() => {
     setValue(diaryEntry.text);
