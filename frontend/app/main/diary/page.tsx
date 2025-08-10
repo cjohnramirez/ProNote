@@ -7,13 +7,13 @@ import React, { useEffect, useState } from "react";
 
 function Diary() {
   const diaryEntry = useDiaryStore((state) => state.diaryEntry);
-  const [_value, setValue] = useState("");
+  const [value, setValue] = useState("");
 
   useEffect(() => {
     setValue(diaryEntry.text);
   }, []);
 
-  //console.log(value);
+  console.log(value);
 
   return (
     <section className="border-muted-white rounded-2xl border-1">
