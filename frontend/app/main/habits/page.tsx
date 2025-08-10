@@ -29,8 +29,8 @@ function Habits() {
     " to " +
     dt.endOf("week").toFormat("LLLL dd");
 
-  var completedCounter = 0;
-  var notIncludedCounter = 0;
+  let completedCounter = 0;
+  let notIncludedCounter = 0;
 
   habits.map((habit) => {
     habit.daysOfWeek.map((dayOfWeek) => {

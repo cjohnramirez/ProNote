@@ -11,7 +11,7 @@ user_service = UserService()
 
 @auth_router.post('/signup', response_model=UserModel, status_code=status.HTTP_201_CREATED)
 async def create_user_account(user_data: UserCreateModel, session: AsyncSession = Depends(get_session)):
-    print("I ran here!")
+
     email = user_data.email
 
     user_exists = await user_service.user_exists(email, session)
@@ -23,3 +23,8 @@ async def create_user_account(user_data: UserCreateModel, session: AsyncSession 
     new_user = await user_service.create_user(user_data, session)
 
     return new_user
+
+
+@auth_router.get("/ping")
+async def ping():
+    return {"message": "pong"}
